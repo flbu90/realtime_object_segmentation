@@ -5,9 +5,6 @@ Funktion zum erstellen der Traningsdaten:
 
 2. labels y = Speichere die Ausrichtung als numpy array
 '''
-
-#mendeley username marcel:
-
 import math
 import ctypes
 import pyglet
@@ -26,8 +23,6 @@ from pyntcloud import PyntCloud # open source library for 3D pointcloud visualis
 
 from plyfile import PlyData, PlyElement
 import os
-
-'''
 
 # Configure depth and color streams
 pipeline = rs.pipeline()
@@ -49,8 +44,6 @@ pc = rs.pointcloud()
 decimate = rs.decimation_filter()
 decimate.set_option(rs.option.filter_magnitude, 2 ** 0)
 colorizer = rs.colorizer()
-
-
 
 try:
     while True:
@@ -95,12 +88,7 @@ try:
         verts = np.asanyarray(v).view(np.float32).reshape(-1, 3)  # xyz
         texcoords = np.asanyarray(t).view(np.float32).reshape(-1, 2)  # uv
 
-
-
-
         # ---------------------------------------> Visualization ------------------------------------------------------
-
-
 
         # Konvertieren der Bilddaten in numpy Arrays
         #depth_image = np.asanyarray(depth_frame.get_data())  # depth_image[y][x]
@@ -109,7 +97,6 @@ try:
         #pc.map_to(color_frame)
         #pointcloud = pc.calculate(depth_frame)
         
-
         # -------------------- Save Depthimage-----------------------------
 
         from datetime import datetime
@@ -145,10 +132,10 @@ finally:
     pipeline.stop()
 
 
-'''
 
 # ------------------------------------------------- Testing ------------------------------------------------------------
 
+"""
 DATADIR = 'Saved_Depth_Data'
 
 
@@ -178,6 +165,6 @@ ax = fig.gca(projection='3d')
 ax.set_aspect('equal')
 ax.voxels(binary_feature_vector, edgecolor='red')
 plt.savefig("Saved_Depth_Data/PlottedRSData.png")
-
+"""
 
 

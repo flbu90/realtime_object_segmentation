@@ -1,7 +1,7 @@
 # realtime_object_segmentation
 Realtime Object segmentation using a Intel Realsense Depth Camera
 
-Project to run a realtime 3D object segmentation using a Intel Realsense Depth Camera. This Project is completely beta. 
+Project to run a realtime 3D object segmentation using a Intel Realsense Depth Camera. This Project is completely early stage. 
 
 To Fix:
 Segmentation only works when the live-stream is interrupted.
